@@ -135,7 +135,20 @@ class Employee
 4. file.substring(a,b);  // 返回字符串的子字符串。  
                            a: 原字符串的脚标为a处的字符开始(包括)。(脚标从0开始算)
                             b: 对应脚标为b处的字符(不包括)，即子字符串的最后一个字符为原字符串脚标为b-1处的字符。  
-
+5.(1)getBytes();            // 使用默认的编码将字符串进行编码后存到一个新的byte数组里，并返回该byte数组。
+  (2)getBytes(String CharsetName);   // 使用指定的编码将字符串进行编码后存到一个新的byte数组里，并返回该byte数组。
+  (3)String s = new String(str.getBytes("utf-8"),"gbk"));  // 将已经解析出来的字节数据转化为gbk编码格式的字符串， 
+                                                           在内存中即为gbk格式的字节数组转为unicode格式去交互传递。
+  无论如论转换，java程序的数据都是要先和Unicode做转换。  
+  
+  ##流类
+    Java的流式输入/输出建立在4个抽象类的基础上：InputStream、OutputStream、Reader和Writer。  
+    InputStream和OutputStream被设计成字节流类，Reader和Writer被设计成字符流类。一般来说，处理字符或字符串时应使用字符流类，
+  处理字节或二进制对象时应使用字节流类。  
+  
+  
+  
+    
 
                              
                                                      
