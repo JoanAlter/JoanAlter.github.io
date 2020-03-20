@@ -128,8 +128,7 @@ class Employee
 ```
 
 *总结*
-```
-1. 设name中有8个字符，少于8个则补空格(这里用"\u0000")，多于8个则去掉后面多余的部分。
+1. 设name中有8个字符，少于8个则补空格(这里用"\u0000")，多于8个则去掉后面多余的部分。   
 2. file.skipBytes(n);    // 跳过字节大小为n的数据
 3. file.seek(n);      //  将文件指针移动到文件指定位置  
 4. file.substring(a,b);  // 返回字符串的子字符串。  
@@ -145,33 +144,34 @@ class Employee
   InputStream和OutputStream被设计成字节流类，Reader和Writer被设计成字符流类。一般来说，处理字符或字符串时应使用字符流类，
   处理字节或二进制对象时应使用字节流类。 
 
-# 字节流  
- 1. 字节流以InputStream和OutStream为顶层。
- 2.InputStream是一个定义了Java流式字节输入模式的抽象类，该类的所有方法在出错时时都会引发一个IOEException异常。  
- 3.OutputStream是定义了流式字节输出模式的抽象类，该类的所有方法返回一个void值并且在出错的情况下会引发一个IOEException异常。 
- 
- 4.FileInputStream (文件字节输入流)
-     FileInputStream类创建一个能从文件读取字节的InputStream类，它的两个常用的构造方法如下:
-     # FileInputStream(String filepath)
-     # FileInputStream(File fileObj)
-     示例:
-     InputStream f0 = new FileputStream("c:\\test.txt");  
+## 字节流  
+ 1. 字节流以InputStream和OutStream为顶层。         
+ 2.InputStream是一个定义了Java流式字节输入模式的抽象类，该类的所有方法在出错时时都会引发一个IOEException异常。   
+ 3.OutputStream是定义了流式字节输出模式的抽象类，该类的所有方法返回一个void值并且在出错的情况下会引发一个IOEException异常。     
      
-     File f = new File(""c:\\test.txt);
-     InputStream f1 = new FileInputStream(f);  
+ 4.* FileInputStream (文件字节输入流)    
+     FileInputStream类创建一个能从文件读取字节的InputStream类，它的两个常用的构造方法如下:    
+     # FileInputStream(String filepath)    
+     # FileInputStream(File fileObj)    
+     示例:  
+     InputStream f0 = new FileputStream("c:\\test.txt");    
+     
+     File f = new File(""c:\\test.txt);   
+     InputStream f1 = new FileInputStream(f);    
    
-  5.FileOutStream (文件字节输出流)
-     FileOutputStream类继承类OutputStream类，它的构造方法如下：
-     # FileOutStream(String filePath)
-     # FileOutputStream(File fileObj)
-     # FileOutStream(String filePath, boolean append)
-        它们可以引发IOException或SecurityException异常。在这里filepPth是绝对路径，  
-      fileObj是描述该文件的File  对象。如果append为true，文件则以设置搜索路径模式打开。
-      FileOutStream的创建不依赖文件是否存在。在创建对象时，FileOutStream会打在开输出文件
-      之前就创建它。 在这种情况下如果打开一个只读文件，则会引发一个IOException异常。
+  5.* FileOutStream (文件字节输出流)   
+     FileOutputStream类继承类OutputStream类，它的构造方法如下：   
+       
+     # FileOutStream(String filePath)   
+     # FileOutputStream(File fileObj)   
+     # FileOutStream(String filePath, boolean append)   
+        它们可以引发IOException或SecurityException异常。在这里filepPth是绝对路径，    
+      fileObj是描述该文件的File  对象。如果append为true，文件则以设置搜索路径模式打开。       
+      FileOutStream的创建不依赖文件是否存在。在创建对象时，FileOutStream会打在开输出文件     
+      之前就创建它。 在这种情况下如果打开一个只读文件，则会引发一个IOException异常。      
   
-#向文件中写入字符串并读出
-  ```    
+#向文件中写入字符串并读出   
+  ```  
 import java.io.*;
 
 public class StreamDemo
@@ -244,16 +244,17 @@ public class StreamDemo
         System.out.println(new String(b1, 0, i));
     }
 }
-  ```
-* public String(byte[] bytes,int offset,int length)
-    构造一个新的 String，方法是使用指定的字符集解码字节的指定子数组。新的 String 的长度是一个字符集函数，因此不能等于该子数组的长度。 
-    当给定字节在给定字符集中无效的情况下，该构造方法无指定的行为。当需要进一步控制解码过程时，应使用 CharsetDecoder 类。 
-    参数：
-    bytes - 要解码为字符的字节
-    offset - 要解码的首字节的索引
-    length - 要解码的字节数 
-    抛出： 
-    IndexOutOfBoundsException - 如果 offset 和 length 参数索引字符超出 bytes 数组的范围 
+  ```  
+  
+* public String(byte[] bytes,int offset,int length)   
+    构造一个新的 String，方法是使用指定的字符集解码字节的指定子数组。新的 String 的长度是一个字符集函数，因此不能等于该子数组的长度。   
+    当给定字节在给定字符集中无效的情况下，该构造方法无指定的行为。当需要进一步控制解码过程时，应使用 CharsetDecoder 类。    
+    参数：   
+    bytes - 要解码为字符的字节   
+    offset - 要解码的首字节的索引   
+    length - 要解码的字节数   
+    抛出：   
+    IndexOutOfBoundsException - 如果 offset 和 length 参数索引字符超出 bytes 数组的范围。     
      
      
  
