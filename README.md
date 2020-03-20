@@ -55,9 +55,9 @@ public class FileDemo
    new RandomAccessFile(f, 'rw')      读写方式
    new RandomAccessFile(f, 'r')       只读方式
    当以读写的方式打开一个文件时，如果这个文件不存在，程序会自动创建此文件
-   ```
    
-   示例
+   
+* 示例
    ```
 import java.io.*;
 public class RandomFileDemo
@@ -170,8 +170,8 @@ class Employee
       FileOutStream的创建不依赖文件是否存在。在创建对象时，FileOutStream会打在开输出文件
       之前就创建它。 在这种情况下如果打开一个只读文件，则会引发一个IOException异常。
   
-  #向文件中写入字符串并读出
-```    
+#向文件中写入字符串并读出
+  ```    
 import java.io.*;
 
 public class StreamDemo
