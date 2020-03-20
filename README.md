@@ -171,7 +171,7 @@ class Employee
       之前就创建它。 在这种情况下如果打开一个只读文件，则会引发一个IOException异常。
   
   #向文件中写入字符串并读出
-  ```    
+```    
 import java.io.*;
 
 public class StreamDemo
