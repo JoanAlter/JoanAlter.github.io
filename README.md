@@ -56,9 +56,8 @@ public class FileDemo
    new RandomAccessFile(f, 'rw')      读写方式
    new RandomAccessFile(f, 'r')       只读方式
    当以读写的方式打开一个文件时，如果这个文件不存在，程序会自动创建此文件
-   
-   
-* 示例   
+     
+示例   
  ```
 import java.io.*;
 public class RandomFileDemo
@@ -126,10 +125,9 @@ class Employee
 
     }
 }  
+``` 
 
-```   
-
-*总结*  
+*总结*   
 1. 设name中有8个字符，少于8个则补空格(这里用"\u0000")，多于8个则去掉后面多余的部分。   
 2. file.skipBytes(n);    // 跳过字节大小为n的数据
 3. file.seek(n);      //  将文件指针移动到文件指定位置  
@@ -211,7 +209,6 @@ public class StreamDemo
             e2.printStackTrace();
         }
 
-
         //  以下为读文件操作
         InputStream in = null;
         try
@@ -246,8 +243,7 @@ public class StreamDemo
         System.out.println(new String(b1, 0, i));
     }
 }
-
-  ```   
+```
   
 * public String(byte[] bytes,int offset,int length)   
     构造一个新的 String，方法是使用指定的字符集解码字节的指定子数组。新的 String 的长度是一个字符集函数，因此不能等于该子数组的长度。   
