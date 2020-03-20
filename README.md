@@ -51,13 +51,13 @@ public class FileDemo
 
 ## RandomAccessFile类
    *RandomAccessFile类支持“随机访问”方式，可以跳转到文件的任意位置处读写数据。*
-   ```
+ 
    RandomAccessFile类对象的构造方法
    new RandomAccessFile(f, 'rw')      读写方式
    new RandomAccessFile(f, 'r')       只读方式
    当以读写的方式打开一个文件时，如果这个文件不存在，程序会自动创建此文件
      
-示例   
+* 示例 *   
  ```
 import java.io.*;
 public class RandomFileDemo
@@ -127,7 +127,7 @@ class Employee
 }  
 ``` 
 
-*总结*   
+* 总结 *   
 1. 设name中有8个字符，少于8个则补空格(这里用"\u0000")，多于8个则去掉后面多余的部分。   
 2. file.skipBytes(n);    // 跳过字节大小为n的数据
 3. file.seek(n);      //  将文件指针移动到文件指定位置  
