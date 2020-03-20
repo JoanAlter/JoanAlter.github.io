@@ -127,7 +127,7 @@ class Employee
 }  
 ``` 
 
-* 总结 *   
+* 总结     
 1. 设name中有8个字符，少于8个则补空格(这里用"\u0000")，多于8个则去掉后面多余的部分。   
 2. file.skipBytes(n);    // 跳过字节大小为n的数据
 3. file.seek(n);      //  将文件指针移动到文件指定位置  
@@ -144,7 +144,7 @@ class Employee
   InputStream和OutputStream被设计成字节流类，Reader和Writer被设计成字符流类。一般来说，处理字符或字符串时应使用字符流类，
   处理字节或二进制对象时应使用字节流类。 
 
-## 字节流  
+## 字节流    
  1. 字节流以InputStream和OutStream为顶层。         
  2.InputStream是一个定义了Java流式字节输入模式的抽象类，该类的所有方法在出错时时都会引发一个IOEException异常。   
  3.OutputStream是定义了流式字节输出模式的抽象类，该类的所有方法返回一个void值并且在出错的情况下会引发一个IOEException异常。     
@@ -253,15 +253,5 @@ public class StreamDemo
     offset - 要解码的首字节的索引   
     length - 要解码的字节数   
     抛出：   
-    IndexOutOfBoundsException - 如果 offset 和 length 参数索引字符超出 bytes 数组的范围。     
-     
-     
- 
- 
-  
-  
-  
-    
-
-                             
-                                                     
+    IndexOutOfBoundsException - 如果 offset 和 length 参数索引字符超出 bytes 数组的范围。  
+                                                                     
