@@ -244,7 +244,6 @@ public class StreamDemo
         System.out.println(new String(b1, 0, i));
     }
 }
-
   ```
 * public String(byte[] bytes,int offset,int length)
     构造一个新的 String，方法是使用指定的字符集解码字节的指定子数组。新的 String 的长度是一个字符集函数，因此不能等于该子数组的长度。 
