@@ -253,5 +253,101 @@ public class StreamDemo
     offset - 要解码的首字节的索引   
     length - 要解码的字节数   
     抛出：   
-    IndexOutOfBoundsException - 如果 offset 和 length 参数索引字符超出 bytes 数组的范围。  
+    IndexOutOfBoundsException - 如果 offset 和 length 参数索引字符超出 bytes 数组的范围。    
+    
+ ## 字符流  
+ * 1.Reader
+    Reader是定义Java的流式字符输入模式的抽象类，该类的所有方法在出错的情况下都将引发IOException异常。  
+    
+ * 2.Writer  
+     Wruter是定义流式字符输出的抽象类，所有该类的方法都返回一个void值并在出错的条件下引发IOException异常。  
+     
+  * 3.FileREader  
+      FileReader类创建一个可以读取文件内容的类Reader类。常用构造方法如下:  
+      * FileReader(String filePath)  filePath为完整路径。  
+      * FileReader(File Obj)  
+      
+  * 4.FileWriter  
+      FileWriter类创建一个可以读取文件内容的Reader类。常用构造方法如下:  
+      * FileWriter(String filePath)  
+      * FileWriter(String filePath, bollean append)  
+      * FileWriter(File fileObj)  
+    
+  * 向文件中写入字符串并读出  
+  ```
+import java.io.*;
+
+public class CharDemo
+{
+    public static void main(String args[])
+    {
+        File f = new File("D:\\java\\temp.txt");
+        Writer out = null;
+        try
+        {
+            out = new FileWriter(f);
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        // 声明一个String类型对象
+        String str = "Hello World!";
+        try
+        {
+           // 将str内容写入到文件中
+           out.write(str);
+        }
+        catch (IOException e1)
+        {
+            e1.printStackTrace();
+        }
+        try
+        {
+            out.close();
+        }
+        catch (IOException e2)
+        {
+            e2.printStackTrace();
+        }
+
+        // 以下为读文件操作
+        Reader in = null;
+        try
+        {
+            in = new FileReader(f);
+        }
+        catch (IOException e3)
+        {
+            e3.printStackTrace();
+        }
+        // 开辟一个空间用于接收文件都进来的数据
+        char c1[] = new char[1024];
+        int i = 0;
+        try
+        {
+            // 将c1的引用传递到read()方法之中，提示此方法返回读入数据个数        
+            i = in.read(c1);
+            // 将in流中的数据读取出来，并依次存储到数组c1中，返回值为实际读取的有效数据的个数。
+        }
+        catch (IOException e4)
+        {
+            e4.printStackTrace();
+        }
+        try
+        {
+            in.close();
+        }
+        catch (IOException e5)
+        {
+            e5.printStackTrace();
+        }
+        // 将字符数组转换为字符串输出
+        System.out.println(new String(c1, 0, i));
+    }
+}  
+```  
+      
+      
+    
                                                                      
