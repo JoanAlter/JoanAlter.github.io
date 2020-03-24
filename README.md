@@ -270,7 +270,7 @@ public class StreamDemo
   * 4.FileWriter  
       FileWriter类创建一个可以读取文件内容的Reader类。常用构造方法如下:  
       * FileWriter(String filePath)  
-      * FileWriter(String filePath, bollean append)  
+      * FileWriter(String filePath, bollean append)  // 当append=true,相当于原来文件里写的A现在要写B追加的话文件就变成了A->AB。  append=false,就是覆盖，覆盖的话就是A->B。
       * FileWriter(File fileObj)  
     
   * 向文件中写入字符串并读出  
@@ -347,7 +347,14 @@ public class CharDemo
     }
 }  
 ```  
-      
+* 注意：可将305-312行代码注释掉，FileWrriter类并不是继承自Writer类，而是击沉了Writer的子类(OutputStreamWriter)，    
+        此类为字节流和字符流的转换类。  
+* 结论：字符流用到了缓冲区，而字节流没有用到缓冲区。另外也可以用Writer类中的flush()方法强制清空缓冲区。  
+
+
+## 管道流  
+   * 管道流主要用于连接两个线程间的通信。管道流也分为字节流(PiedInputStream, piedOutputStream)与字符流
+(PiedReader, PiedWriter)。  
       
     
                                                                      
