@@ -355,6 +355,8 @@ public class CharDemo
 ## 管道流  
    * 管道流主要用于连接两个线程间的通信。管道流也分为字节流(PiedInputStream, piedOutputStream)与字符流
 (PiedReader, PiedWriter)。  
+   * 一个PiedInputStream对象必须和一个PiedOutputStream对象进行连接而产生一个通信管道，PiedOutputStream可以向管道  
+中写入数据，PiedInputStream可以从管道中读取PiedOutputStream写入的数据。  
       
     
                                                                      
