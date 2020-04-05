@@ -437,10 +437,10 @@ class Receiver extends Thread
   ByteArrayInputStream(byte[] buf, int offse, int length)  
   ByteArrayOutStream()  
   ByteArrayOutStream(int)  
-  ``` 
-  示例
-  ```
-  package FileIO;
+  ```   
+  
+ 示例
+ ```
 import java.io.*;
 
 public class ByteArrayDemo
@@ -473,7 +473,7 @@ public class ByteArrayDemo
     }
 }
 
-  ```
+```
       
     
                                                                      
