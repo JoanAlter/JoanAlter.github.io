@@ -474,6 +474,12 @@ public class ByteArrayDemo
 }
 
 ```
-      
+
+* PrintWriter  
+PrintWriter(OutputStream)  
+PrintWriter(OutputStream, boolean)  
+PrintWriter(Writer)  
+PrintWriter(Writer, boolean)  
+
     
                                                                      
