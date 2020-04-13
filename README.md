@@ -481,5 +481,11 @@ PrintWriter(OutputStream, boolean)
 PrintWriter(Writer)  
 PrintWriter(Writer, boolean)  
 
+
+* DataInputStream与DataOutputStream  
+  DataInputStream与DataOutputStream提供了与平台无关的数据操作，通常回先通过DataOutputStream按照一定的格式输出，   
+再通过DataInputStream按照一定格式读入。由于可以得到java的各种基本类型甚至字符串，这样对得到的数据便可以方便地进  
+行处理，在这通过协议传输的信息的网络上是非常适用的。  
+
     
                                                                      
