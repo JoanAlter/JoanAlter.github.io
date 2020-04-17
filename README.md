@@ -564,5 +564,119 @@ public class DataStreamDemo
 
 ```
 
+
+* 文件合并
+```
+package FileIO;
+import java.io.*;
+
+public class SequenceDemo
+{
+    public static void main(String[] args) throws IOException
+    {
+        File f1 = new File("D:\\java\\1.txt");
+        File f2 = new File("D:\\java\\2.txt");
+        String a = "the first";
+        String b = "the second";
+        byte[] a1 = a.getBytes();
+        byte[] b1 = b.getBytes();
+
+        try
+        {
+           OutputStream F1 = new FileOutputStream(f1);
+           OutputStream F2 = new FileOutputStream(f2);
+           F1.write(a1);
+           F2.write(b1);
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+
+        // 声明两个文件读入流
+        FileInputStream in1 = null, in2 = null;
+        // 声明一个序列流
+        SequenceInputStream s = null;
+        FileOutputStream out = null;
+
+        try
+        {
+            // 构造两个被读入的文件
+            File inputFile1 = new File("D:\\java\\1.txt");
+            File inputFile2 = new File("D:\\java\\2.txt");
+            // 构造一个输出文件
+            File outputFile = new File("D:\\java\\12.txt");
+
+            in1 = new FileInputStream(inputFile1);
+            in2 = new FileInputStream(inputFile2);
+
+            // 将两个输入流合为一个输入流
+            s = new SequenceInputStream(in1, in2);
+            out = new FileOutputStream(outputFile);
+
+            int c;
+            while ((c = s.read()) != -1)
+            {
+                out.write(c);
+            }
+            in1.close();
+            in2.close();
+            s.close();
+            System.out.println("ok...");
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        finally
+        {
+            if (in1 != null)
+            {
+                try
+                {
+                    in1.close();
+                }
+                catch (IOException e)
+                {
+                }
+            }
+            if (in2 != null)
+            {
+                try
+                {
+                    in1.close();
+                }
+                catch (IOException e)
+                {
+                }
+            }
+            if (s != null)
+            {
+                try
+                {
+                    s.close();
+                }
+                catch (IOException e)
+                {
+                }
+                if (out != null)
+                {
+                    try
+                    {
+                        out.close();
+                    }
+                    catch (IOException e)
+                    {
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+```  
+
+
     
                                                                      
