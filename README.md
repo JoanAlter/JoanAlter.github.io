@@ -678,5 +678,67 @@ public class SequenceDemo
 ```  
 
 
+* 字节流与字符流的转换  
+  InputStreamReader用于将一个字节流中的字节解码城字符，OutputStreamWriter用于将写入的字符编码成字节后写入一个字节流。
+
+构造方法：  
+InputStreamReader(InputStream in)  
+InputStreamReader(InputStream in, String CharseName)  // 接收已指定字符集名的字符串，并用该字符集创建对象。  
+OutputStreamWriter(OutStream in)  
+OutputStreamWriter(OutStream in, String CharsetName)  // 接收已指定字符集名的字符串，并用该字符集创建OutStreamWriter对象。  
+
+  为避免频繁地进行字符与字节间的相互转换，最好不要直接使用这两个类进行读写，而应尽量使用BufferedWriter类包装OutStreamWriter类，  
+用BufferedReader类包装InputStreamReader类。  
+BufferedWriter Out = new BufferedWriter(new OutputStreamWriter(System.out));  
+BufferedReader in = new BufferedReader(new InputStreamReader(System.in));  
+String strLine = in.readLine();  
+
+* 示例
+```
+import java.io.*;
+
+public class BufferDemo
+{
+    public static void main(String[] args) throws IOException
+    {
+        BufferedReader buf = null;
+        buf = new BufferedReader(new InputStreamReader((System.in)));
+        String str = null;
+        while (true)
+        {
+            System.out.print("请输入数字：");
+            try
+            {
+                str = buf.readLine();
+            }
+            catch (IOException e)
+            {
+                e.printStackTrace();
+            }
+            int i = -1;
+            try
+            {
+                i = Integer.parseInt(str);
+                i++;
+                System.out.println("输入的数字修改后为：" + i);
+                break;
+            }
+            catch (Exception e)
+            {
+                System.out.println("输入的内容不正确，清重新输入！");
+            }
+
+        }
+
+    }
+}
+
+
+```
+  
+
+
+
+
     
                                                                      
