@@ -733,6 +733,8 @@ public class BufferDemo
     }
 }
 
+//  parseInt() 方法用于将字符串参数作为有符号的十进制整数进行解析。
+// parseInt(String s, int radix) radix为指定基数(基数可以是 10, 2, 8, 或 16 等进制数)。  
 
 ```
   
